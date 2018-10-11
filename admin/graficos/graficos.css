@@ -1,0 +1,77 @@
+/* CSS Document */
+
+#contenedor{
+	max-width: 1140px;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#titulo_principal{
+	border-width: 1px;
+	border-color:#99bce8;
+	border-style:solid;
+	padding-right: 3px;
+	padding-left: 3px;
+	background-color: #cbddf3;
+	background-image: -webkit-linear-gradient(top, #dae7f6,#cddef3 45%,#abc7ec 46%,#abc7ec 50%,#b8cfee 51%,#cbddf3);
+	}
+
+#titulo_principal h1{
+	font-size: 11px;
+	color:#04408c;
+	font-weight:bold;
+	font-family: tahoma, arial, verdana, sans-serif;
+	}
+
+.row {
+	float:none;
+	clear:both;
+	margin-bottom: 25px;
+	margin-top: 9px;
+	}
+.campos_select {
+	float: left;
+	margin-right: 5px;
+	}
+.canvas_box {
+	margin-top:25px;
+	float: left;
+	width: 50%;
+	}
+select {
+	border-radius: 5px !important;
+	padding: 5px;
+	font-size:11px;
+	color:#666;
+	min-width: 120px;
+}
+
+table {
+	border: none;
+	border-collapse:collapse !important;
+	width: 33% !important;
+	margin-left: 10%;
+	margin-top:25px;
+}
+td {
+	padding: 8px !important; 
+	color:#333;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;}
+	
+.button{
+	padding: 5px !important;
+	background-color:#FFF;
+	border-width:1px;
+	border-color:#CCC;
+	border-collapse:collapse;
+	border-radius: 5px;
+	border-style:solid;
+	color:#666;
+	min-width:100px;
+	float: right;}
+	
+.button:hover{ 
+	background:#eaeaea;
+	cursor:pointer;}

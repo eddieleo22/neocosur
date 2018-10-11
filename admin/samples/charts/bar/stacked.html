@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+
+<head> 
+    <title>Stacked Bar Chart</title>
+    <script src="../../../Chart.bundle.js"></script>
+    <script src="../../utils.js"></script>
+	<script src="../../jquery.min.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+</head>
+
+<body>
+        <script>
+                var id=0;
+                var selection;
+				var allData = [];
+                var datas0 = [];
+                var datas1 = [];
+                var datas2 = [];
+				var etiquetas = [];
+                var barChartData;
+				var contador = 0;	
+
+				
+                var laTerribleFuncion = function(graf, id, id2, id3, id4, id5){            
+                var ajax_url = "graficos/personas.php";                
+                var ajax_request = new XMLHttpRequest();
+                graph = JSON.parse(graf).toString();
+                id = JSON.parse(id).toString();
+                id2 = JSON.parse(id2).toString();
+                id3 = JSON.parse(id3).toString();
+                id4 = JSON.parse(id4).toString();
+				id5 = JSON.parse(id5).toString();
+                params = "id=" + id + "&id2=" + id2 + "&id3=" + id3 + "&id4=" + id4 + "&id5=" + id5 + "&graph=" + graph;				
+                ajax_url += '?' + params;
+				console.log("ajax_url "+ajax_url);
+                ajax_request.onreadystatechange = function() {
+                    if (ajax_request.readyState == 4 ) {
+                        response = JSON.parse( ajax_request.responseText );
+						console.log("response 1 "+response);
+                        if(response.success){
+                            for ( et in response.data.etiqueta ) {
+                                etiquetas[et] = response.data.etiqueta[et];                                    
+                            }
+                            for ( dt in response.data.valores ) {
+								allData = response.data.valores;
+                                for ( dts in response.data.valores[dt] ) {
+                                    if(dt == 0){
+                                        datas0[dts] = response.data.valores[dt][dts];
+                                    }
+                                    else if(dt == 1){
+                                        datas1[dts] = response.data.valores[dt][dts];
+                                    }
+                                    else if(dt == 2){
+                                        datas2[dts] = response.data.valores[dt][dts];
+                                    }
+                                }                                    
+                            }
+							allData = [datas0,datas1,datas2];
+							tabla1(etiquetas,allData);
+                        }
+						console.log("graph-> uno > "+graph );
+						console.log("graf-> uno > "+graf );
+                        if( graf == 1 ){
+								window.myBar.data = {
+								labels: etiquetas,
+								datasets: [{
+									label: 'Dataset 1',
+									backgroundColor: window.chartColors.red,
+									data: datas0                 
+								}, {
+									label: 'Dataset 2',
+									backgroundColor: window.chartColors.blue,
+									data: datas1
+								}, {
+									label: 'Dataset 3',
+									backgroundColor: window.chartColors.green,
+									data: datas2
+								}]
+								
+							};
+							window.myBar.update();
+						}
+                    }
+               }
+               
+            ajax_request.open( "GET", ajax_url);
+            ajax_request.send();
+        
+        
+        };
+		
+			var laTerribleFuncion2 = function(graf2, id, id2, id3, id4, id5){  
+                var ajax_url = "graficos/personas.php";                
+                var ajax_request = new XMLHttpRequest();
+                graph2 = JSON.parse(graf2).toString();
+                id = JSON.parse(id).toString();
+                id2 = JSON.parse(id2).toString();
+                id3 = JSON.parse(id3).toString();
+                id4 = JSON.parse(id4).toString();
+				id5 = JSON.parse(id5).toString();
+                params = "id=" + id + "&id2=" + id2 + "&id3=" + id3 + "&id4=" + id4 + "&id5=" + id5 + "&graph=" + graph2;				
+                ajax_url += '?' + params;
+				console.log("ajax_url2 "+ajax_url);
+                ajax_request.onreadystatechange = function() {
+                    if (ajax_request.readyState == 4 ) {
+                        response = JSON.parse( ajax_request.responseText );
+						console.log("response 2 "+response);
+                        if(response.success){
+                            for ( et in response.data.etiqueta ) {
+                                etiquetas[et] = response.data.etiqueta[et];                                    
+                            }
+                            for ( dt in response.data.valores ) {
+								allData = response.data.valores;
+                                for ( dts in response.data.valores[dt] ) {
+                                    if(dt == 0){
+                                        datas0[dts] = response.data.valores[dt][dts];
+                                    }
+                                    else if(dt == 1){
+                                        datas1[dts] = response.data.valores[dt][dts];
+                                    }
+                                    else if(dt == 2){
+                                        datas2[dts] = response.data.valores[dt][dts];
+                                    }
+                                }                                    
+                            }
+							allData = [datas0,datas1,datas2];
+							tabla1(etiquetas,allData);
+                        }
+						console.log("graph->> dos > "+graph2 );
+						console.log("graf->> dos > "+graf2 );
+                        if(graf2 == 2 ){
+								window.myBar2.data = {
+								labels: etiquetas,
+								datasets: [{
+									label: 'Dataset 1',
+									backgroundColor: window.chartColors.red,
+									data: datas0                 
+								}, {
+									label: 'Dataset 2',
+									backgroundColor: window.chartColors.blue,
+									data: datas1
+								}, {
+									label: 'Dataset 3',
+									backgroundColor: window.chartColors.green,
+									data: datas2
+								}]
+
+							};
+							window.myBar2.update();
+						}
+                    }
+               }
+               
+            ajax_request.open( "GET", ajax_url);
+            ajax_request.send();
+        
+        
+        };
+		
+        
+        
+    window.onload = function() { 
+       
+       construirCanvas(1,1);       
+       construirCanvas(2,2);
+	
+    };
+     
+
+     
+    
+    function construirCanvas(id, grafico){
+        if(grafico == 1){
+            laTerribleFuncion(1,0,0,0,0,0);
+            var ctx = document.getElementById("canvas").getContext("2d");
+                window.myBar = new Chart(ctx, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: {
+                        title:{
+                            display:true,
+                            text:"Chart.js Bar Chart - Stacked"
+                        },
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        responsive: true,
+                        scales: {
+                            xAxes: [{
+                                stacked: true
+                            }],
+                            yAxes: [{
+                                stacked: true
+                            }]
+                        }
+                    }
+                });
+        }
+        else{
+            laTerribleFuncion2(2,0,0,0,0,0);
+            var ctx2 = document.getElementById("canvasFijo").getContext("2d");
+                window.myBar2 = new Chart(ctx2, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: {
+                        title:{
+                            display:true,
+                            text:"Chart.js Bar Chart - Stacked"
+                        },
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        responsive: true,
+                        scales: {
+                            xAxes: [{
+                                stacked: true
+                            }],
+                            yAxes: [{
+                                stacked: true
+                            }]
+                        }
+                    }
+                });
+        }
+		
+    }
+		
+		function generarGrph(){
+			$("table").remove();
+			var selection1 = document.getElementById("opcGraficos").value;
+			var selection2 = document.getElementById("opcGraficos2").value;
+			var selection3 = document.getElementById("opcGraficos3").value;
+			var selection4 = document.getElementById("opcGraficos4").value;
+			var selection5 = document.getElementById("opcGraficos5").value;
+			laTerribleFuncion(1,selection1,selection2,selection3,selection4,selection5);
+			laTerribleFuncion2(2,selection1,selection2,selection3,selection4,selection5);		
+		}
+        
+		
+		function tabla1(etiqTabla, datosTabla) {
+		var mybody = document.getElementsByTagName("body")[0];
+		var tableHeder = ["F", "%F", "NF", "Total reg.", "S/I", "%S/I", "Total Niños"];
+		
+        mytable     = document.createElement("table");
+        mytablebody = document.createElement("tbody");
+		for(var h = 0; h < 1; h++) {
+			mycurrent_row = document.createElement("tr");
+			mycurrent_cell = document.createElement("td");
+			currenttext = document.createTextNode("");
+			mycurrent_cell.appendChild(currenttext);
+			mycurrent_row.appendChild(mycurrent_cell);
+			for(var g = 0; g < tableHeder.length; g++) {
+			mycurrent_cell = document.createElement("td");
+			currenttext = document.createTextNode(tableHeder[g]);
+			mycurrent_cell.appendChild(currenttext);
+			mycurrent_row.appendChild(mycurrent_cell);
+			}
+			mytablebody.appendChild(mycurrent_row);	
+		}			
+		
+			for(var j = 0; j < etiqTabla.length; j++) {
+				mycurrent_row = document.createElement("tr");
+				mycurrent_cell = document.createElement("td");
+				currenttext = document.createTextNode(etiqTabla[j]);
+				mycurrent_cell.appendChild(currenttext);
+				mycurrent_row.appendChild(mycurrent_cell);
+				for(var i = 0; i < datosTabla[j].length; i++) {
+					mycurrent_cell = document.createElement("td");
+					currenttext = document.createTextNode(datosTabla[j][i]);
+					mycurrent_cell.appendChild(currenttext);
+					mycurrent_row.appendChild(mycurrent_cell);
+				
+				}
+            mytablebody.appendChild(mycurrent_row);
+        }
+        mytable.appendChild(mytablebody);
+		if(contador < 2){	
+			mybody.appendChild(mytable);
+			contador += 1;
+		}
+		else if (contador > 1){
+			mytable.appendChild(mytablebody);
+			mybody.appendChild(mytable);
+		}
+        mytable.setAttribute("border","1");
+		mytable.setAttribute("name","nameTabla");
+		mytable.setAttribute("style","float:left");
+    }
+		
+		
+    </script>
+    <form >
+		<div style="float:left; ">
+		<select id="opcGraficos" name="opcGraficos" class="form-control input-sm">
+            <option value="0">Seleccione</option>
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+            <option value="3">Opcion 3</option>
+        </select>
+		</div>
+		<div style="float:left; ">
+		<select id="opcGraficos2" name="opcGraficos2" class="form-control input-sm">
+            <option value="0">Seleccione</option>
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+            <option value="3">Opcion 3</option>
+        </select>
+		</div>
+		<div style="float:left; ">
+		<select id="opcGraficos3" name="opcGraficos3" class="form-control input-sm">
+            <option value="0">Seleccione</option>
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+            <option value="3">Opcion 3</option>
+        </select>
+		</div>
+		<div style="float:left; ">
+		<select id="opcGraficos4" name="opcGraficos4" class="form-control input-sm">
+            <option value="0">Seleccione</option>
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+            <option value="3">Opcion 3</option>
+        </select>
+		</div>
+		<div style="float:left; ">
+		<select id="opcGraficos5" name="opcGraficos5" class="form-control input-sm">
+            <option value="0">Seleccione</option>
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+            <option value="3">Opcion 3</option>
+        </select>
+		</div>
+		<br></br>
+        <div style="width: 35%;float:left; ">
+            <canvas id="canvas"></canvas>
+        </div>        
+    </form>
+    
+    <form >
+        <div style="width: 35%; float:left;">
+            <canvas id="canvasFijo"></canvas>
+        </div>
+    </form>
+	<br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+	<div>
+		<input type="button" onclick="generarGrph();"/>
+	</div>
+    <br></br>
+</body>
+
+</html>

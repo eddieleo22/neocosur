@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Estadísticas de Morbilidad</title>
+<script language="JavaScript" src="../../scripts/scripts.js"></script>
+<script type="text/javascript" src="../../scripts/jquery-1.js"></script><!-- Simpletip-->
+<script type="text/javascript" src="niftycube.js"></script>
+<script language="JavaScript">
+window.onload=function(){
+Nifty("div#encabezado_tabla","medium");
+Nifty("div#encabezado_tabla2","medium");
+AplicarCebra();
+}
+
+</script>    
+<link href="../../css/estilo.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+div#encabezado_tabla {
+	width:450px;
+	font-weight:bold;
+	color:#FFF;
+	background-color:#0065a8;
+	padding:1px;
+	text-align: center;
+	line-height: 17px;}
+	
+	div#encabezado_tabla2 {
+	width:450px;
+	font-weight:bold;
+	color:#FFF;
+	background-color:#0065a8;
+	padding:1px;
+	text-align: center;
+	line-height: 17px;}
+
+
+-->
+</style>
+
+
+</head>
+
+<body>
+
+<div id="wrapper_graficos">
+<div id="espacio_graficos">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td height="40" class="titulo_ficha">Estadísticas de Morbilidad</td>
+      <td width="140" align="right"><img src="../../images/logo_textopeq.gif" width="140" height="33" alt="Neocosur" /></td>
+    </tr>
+  </table>
+  
+    <div class="saber">&nbsp;Imprimir<a href="javascript:window.print();"><img src="../../images/print.png" alt="Imprimir" width="16" height="16" hspace="3" border="0"/></a> 
+      &nbsp;Ver Gráfico de Mortalidad<a href="grafico1.htm"><img src="../../images/grafico.png" alt="Ver Gráfico" width="16" height="16" hspace="3" border="0"/></a></div>
+    <br />
+	
+	<table width="920" border="0" cellpadding="0" cellspacing="0">
+      <tr> 
+        <td align="center"><img src="../../images/images_graficos/graf_a_morbi.gif" width="458" height="416" /></td>
+        <td align="center"><img src="../../images/images_graficos/graf_b_morbi.gif" width="459" height="416" /></td>
+      </tr>
+      <tr>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td valign="top"><div id="encabezado_tabla">Detalle Hospital Clínico Universidad 
+            Católica 
+            <div class="texto" id="content_listado"> 
+              <div align="center"> 
+                <table width="98%" border="0" cellpadding="0" cellspacing="0">
+                  <tr> 
+                    <td bgcolor="#83B6E9"><table width="450" border="0" cellpadding="3" cellspacing="1" class="TablaCebra">
+                        <tr> 
+                          <td width="110" bgcolor="#D5E6F7"><strong>Condición</strong><span class="pie"></span></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>P</strong></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>%P</strong></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>NP</strong></td>
+                          <td align="center" nowrap="nowrap" bgcolor="#D5E6F7"><strong>% 
+                            NP</strong></td>
+                          <td align="center" nowrap="nowrap" bgcolor="#D5E6F7"><strong>Total 
+                            reg.</strong></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>S/I</strong></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>% S/I</strong></td>
+                          <td align="center" nowrap="nowrap" bgcolor="#D5E6F7"><strong>Total 
+                            niños</strong></td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>HIC</strong></td>
+                          <td align="center" valign="top">60</td>
+                          <td align="center" valign="top">60</td>
+                          <td align="center" valign="top">40</td>
+                          <td align="center" valign="top">40</td>
+                          <td align="center" valign="top">100</td>
+                          <td align="center" valign="top">10</td>
+                          <td align="center" valign="top">9.0</td>
+                          <td align="center" valign="top">110</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Leucomalacia</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">9.0</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">110</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>02 36 sem.</strong></td>
+                          <td align="center" valign="top">10</td>
+                          <td align="center" valign="top">10</td>
+                          <td align="center" valign="top">90</td>
+                          <td align="center" valign="top">90</td>
+                          <td align="center" valign="top">100</td>
+                          <td align="center" valign="top">5</td>
+                          <td align="center" valign="top">4.7</td>
+                          <td align="center" valign="top">105</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>ECN</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">30</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">30</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">70</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">70</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">16.6</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">120</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Retinopatía</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">9.0</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">110</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Sepsis precoz</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">40</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">40</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">60</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">60</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">5</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">4.7</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">115</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Sepsis clínica<br />
+                            </strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">9.0</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">110</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Clínica SDR<br />
+                            </strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">5</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">4.7</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">115</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Fallece sala 
+                            de partos</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">16.6</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">120</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Ductus</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">9.0</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">110</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Transfusiones</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">100</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">9.0</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">110</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#EAEAEA"  class="linea_borde"><strong>TOTALES</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>580</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>47,7%</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>520</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>42.7%</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>1100</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>115</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>9.4%</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>1215</strong></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div></td>
+      <td valign="top"> <div id="encabezado_tabla2">Detalle Neocosur 
+            <div class="texto" id="content_listado"> 
+              <div align="center"> 
+                <table width="98%" border="0" cellpadding="0" cellspacing="0">
+                  <tr> 
+                    <td bgcolor="#83B6E9"><table width="450" border="0" cellpadding="3" cellspacing="1" class="TablaCebra">
+                        <tr> 
+                          <td width="110" bgcolor="#D5E6F7"><strong>Condición</strong><span class="pie"></span></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>P</strong></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>%P</strong></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>NP</strong></td>
+                          <td align="center" nowrap="nowrap" bgcolor="#D5E6F7"><strong>% 
+                            NP</strong></td>
+                          <td align="center" nowrap="nowrap" bgcolor="#D5E6F7"><strong>Total 
+                            reg.</strong></td>
+                          <td align="center" bgcolor="#D5E6F7"><strong>S/I</strong></td>
+                          <td align="center" nowrap="nowrap" bgcolor="#D5E6F7"><strong>% 
+                            S/I</strong></td>
+                          <td align="center" nowrap="nowrap" bgcolor="#D5E6F7"><strong>Total 
+                            niños</strong></td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>HIC</strong></td>
+                          <td align="center" valign="top">600</td>
+                          <td align="center" valign="top">60</td>
+                          <td align="center" valign="top">400</td>
+                          <td align="center" valign="top">40</td>
+                          <td align="center" valign="top">10000</td>
+                          <td align="center" valign="top">10</td>
+                          <td align="center" valign="top">0.1</td>
+                          <td align="center" valign="top">10010</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Leucomalacia</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">200</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">800</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.1</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10010</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>02 36 sem.</strong></td>
+                          <td align="center" valign="top">100</td>
+                          <td align="center" valign="top">10</td>
+                          <td align="center" valign="top">900</td>
+                          <td align="center" valign="top">90</td>
+                          <td align="center" valign="top">10000</td>
+                          <td align="center" valign="top">5</td>
+                          <td align="center" valign="top">0.0</td>
+                          <td align="center" valign="top">10005</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>ECN</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">300</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">30</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">700</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">70</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.2</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10020</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Retinopatía</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">800</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">200</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.1</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10010</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Sepsis precoz</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">400</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">40</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">600</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">60</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">5</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.0</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10005</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Sepsis clínica<br />
+                            </strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">500</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">500</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.1</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10010</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Clínica SDR<br />
+                            </strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">800</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">200</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">5</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.0</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10005</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Fallece sala 
+                            de partos</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">500</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">500</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">50</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.2</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10020</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Ductus</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">800</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">200</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.1</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10010</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#D5E6F7"><strong>Transfusiones</strong></td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">800</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">80</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">200</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">20</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10000</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">0.1</td>
+                          <td align="center" valign="top" bgcolor="#FFFFFF">10010</td>
+                        </tr>
+                        <tr> 
+                          <td valign="top" bgcolor="#eaeaea" class="linea_borde"><strong>TOTALES</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>5800</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>52.1%</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>5200</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>46.7%</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>11000</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>115</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>1.0%</strong></td>
+                          <td align="center" valign="top" bgcolor="eaeaea" class="linea_borde"><strong>11115</strong></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div></td>
+      </tr>
+    </table>
+
+</div>
+<p class="bottom">
+  <input name="button11" type="button" class="botonCentral" id="button11" onclick="window.close()" value="Cerrar" />
+</p>
+
+</div></body>
+</html>

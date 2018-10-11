@@ -1,0 +1,1 @@
+[17-Mar-2018 23:57:05 UTC] PHP Fatal error:  Call to a member function fetch_array() on null in /home/rcconstr/public_html/neocosur-migracion/admin/excel/centro.php on line 48

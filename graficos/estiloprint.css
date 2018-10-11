@@ -1,0 +1,40 @@
+body, #container{
+  float: none;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+body, p, td, th{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #000;
+  background: #fff;
+}
+blockquote, pre, code, cite{
+  color:#666;
+}
+
+.grafico1{
+    /* background: url(fondo_grafico1.jpg) ;  */
+    position: relative;
+    width:450px;
+    height:300px;    
+}
+.grafico2{
+    border:1px green solid; 
+    position: absolute; 
+    left: 64px; 
+    height: 210px; 
+    width: 16px; 
+    top: 28px;
+}
+.grafico3{
+    position: absolute; 
+    top: 1px
+}
+
+grafico_fondo{
+    position: absolute; 
+    top: 1px;
+}
+

@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+
+body {
+    margin-bottom: 100px; /* Altrura para el footer */
+}
+
+#banderas {
+	margin-top: 60px;
+}
+
+#logo {
+	margin-top: 20px;
+}
+
+#logo, #banderas {
+	margin-bottom: 20px;
+}
+
+#menu_publico {
+    background-color: #00a5b4 !important;
+    color: #FFF;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin-left: -46px;
+    width: 102%;
+}
+
+.nav-link {
+	color: #FFF;
+	text-transform: uppercase;
+	border-bottom: 3px solid #00a5b4;
+	background-color: #00a5b4;
+	margin-right: 35px;
+	padding-bottom: 1px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+#btn_inicio {
+	margin-left: 30px;
+}
+
+.nav-link:hover {
+	border-bottom: 3px solid #f8ae5d;
+	color: #FFF;
+}
+
+#img_home {
+	width: 100%;
+	max-width: 1140px;
+}
+
+#home_icons {
+	height: 100px;
+	color: #FFF;
+	text-align:center;
+	font-size:12px;
+	font-family:'Roboto', sans-serif
+	font-weight:100;
+}
+
+#home_icons a {
+	color: #FFF;
+	stroke: #FFF;
+}
+
+.home_cuadro_1 {
+	background-color: #00a6b5 !important;
+	padding-top: 15px !important;
+}
+.home_cuadro_2 {
+	background-color: #00a1ad !important;
+	padding-top: 15px !important;
+}
+.home_cuadro_3 {
+	background-color: #008a9a !important;
+	padding-top: 15px !important;
+}
+#cont-footer {
+	border-bottom: 10px #c0bfbd solid;
+	text-align: center;
+}
+
+.footer_publico {
+    bottom: 0;
+    width: 100%;
+    height: 60px; /*Altura del footer */
+    color:#c0bfbd;
+    margin-top: 50px;
+}
+
+
+.display-4 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #00a5b4;
+}
+
+.blockquote {
+	border-top: 1px solid #eaeaea;
+	padding-top: 15px;
+	border-bottom: 1px solid #eaeaea;
+	padding-bottom: 15px;
+}
+h4 {
+	color: #00599a !important;
+	margin-bottom: 25px !important;
+	margin-top: 25px !important;
+	display: block !important;
+}
+
+.ui-accordion .ui-accordion-header {
+	background-color: #f3f3f3;
+}
+.ui-state-active{
+	background-color: #ccc !important;
+}
+.pie {
+	font-size: 11px;
+	margin-top: 25px;
+}
+.revista{
+	margin-bottom: 25px;
+}
+.publicacion {
+	margin-bottom: 25px;
+}
+.login {
+	
+}
+.noticia {
+	padding-top: 18px;
+	padding-bottom: 18px;
+	padding-left: 10px;
+	padding-left: 10px;
+	border-radius: 8px;
+	margin-bottom: 25px;
+}
+.noticia:nth-child(even){
+	background: linear-gradient(#daeff7, #b2e2f0);}
+
+.noticia:nth-child(odd){
+	background: linear-gradient(#def1d5, #c5e7b9);}
+
+.card-title{color:#666;}
