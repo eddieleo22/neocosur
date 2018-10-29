@@ -60,7 +60,7 @@ session_start();
         <div class="form-group col-lg-6">
           <label for="fecha_nacimiento" class="col-lg-5 control-label">Fecha de Nacimiento</label>
           <div class="col-lg-7">
-            <input type="date" name="fecha_nacimiento" class="form-control input-sm" required>
+            <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control input-sm" required>
           </div>
         </div>  
 
@@ -111,7 +111,7 @@ session_start();
         <div class="form-group col-lg-6">
           <label for="talla" class="col-lg-5 control-label">Talla</label>            
           <div class="col-lg-6 input-group linea">
-            <input type="number" min="0" step="1" name="talla" class="form-control input-sm" aria-describedby="basic-addon2" required>
+            <input type="number" min="0" step="0.1" name="talla" class="form-control input-sm" aria-describedby="basic-addon2" required>
             <span class="input-group-addon" id="basic-addon2">cm.</span>
           </div>
         </div>

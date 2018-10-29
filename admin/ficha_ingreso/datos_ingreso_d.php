@@ -94,7 +94,7 @@ $_SESSION["estado"]= $estado;
         <div class="form-group col-lg-6">
           <label for="fecha_nacimiento" class="col-lg-5 control-label">Fecha de Nacimiento</label>
           <div class="col-lg-7">
-            <input type="date" name="fecha_nacimiento" value="<?php echo $fecha; ?>" class="form-control input-sm" required>
+            <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" value="<?php echo $fecha; ?>" class="form-control input-sm" required>
           </div>
         </div>  
 
@@ -149,7 +149,7 @@ $_SESSION["estado"]= $estado;
         <div class="form-group col-lg-6">
           <label for="talla" class="col-lg-5 control-label">Talla</label>            
           <div class="col-lg-6 input-group linea">
-            <input type="number" min="0" step="1" name="talla" value="<?php echo $talla; ?>"  class="form-control input-sm" aria-describedby="basic-addon2" required>
+            <input type="number" min="0" step="0.1" name="talla" value="<?php echo $talla; ?>"  class="form-control input-sm" aria-describedby="basic-addon2" required>
             <span class="input-group-addon" id="basic-addon2">cm.</span>
           </div>
         </div>
@@ -157,7 +157,7 @@ $_SESSION["estado"]= $estado;
         <div class="form-group col-lg-6">
           <label for="craneo" class="col-lg-5 control-label">Cir. cráneo</label>            
           <div class="col-lg-6 input-group linea">
-            <input type="number" min="22" step="1" name="craneo" value="<?php echo $craneo; ?>"  class="form-control input-sm" aria-describedby="basic-addon2" required>
+            <input type="number" min="22" step="0.1" name="craneo" value="<?php echo $craneo; ?>"  class="form-control input-sm" aria-describedby="basic-addon2" required>
             <span class="input-group-addon" id="basic-addon2">cm.</span>
           </div>
         </div>

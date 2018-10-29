@@ -5,6 +5,7 @@ include '../capaDAO/informacion_altaDAO.php';
 include '../capaDAO/ConexionDAO.php';
 include '../capaEntidades/ingreso.php';
 include '../capaDAO/IngresoDAO.php';
+include '../capaDAO/antropometriaDAO.php';
 include '../ayuda.php'; 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
@@ -20,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	extract($_POST);
 $cone = new ConexionDAO(); 
 $dao = new informacion_altaDAO($cone);
+$daoAntro = new antropometriaDAO($cone);
 $daoIngreso =  new IngresoDAO($cone); 
 $idOculto= $cone->test_input($idOculto);
 $arr = $dao->buscarId($idOculto);
@@ -58,12 +60,17 @@ $ingreso = new ingreso();
 			$ingreso->FALLECE_SALA_PARTO='1';
 			$daoIngreso->actualizarFallece($ingreso);
 		}
+
+		$daoAntro->actualizarAlta($alta_dias_alta,$idOculto);
 		echo '<script type="text/javascript">
 				window.location.assign("../ficha_ingreso.php?id_neocosur='.$idOculto.'&url=alta#alta");
 				</script>';
 	   
 	}
 	else { 
+			
+			
+		$daoAntro->actualizarAlta($alta_dias_alta,$idOculto);
 		$dao->actualizar($alta); 
 		if($p['destino']=='fallece'){ 
 			$ingreso->ID_NEOCOSUR=$idOculto;

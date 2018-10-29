@@ -131,6 +131,74 @@ include 'head.php';
 ?>
 <script language="JavaScript" type ="text/javascript">
 
+function ponCero(strPon){  
+    if(parseInt(strPon.length) < 2)  
+        strPon = "0" + strPon;  
+    return strPon;  
+}  
+function validaFecha(formulario,fec1,fec2){  
+
+    var dFechaMenor =  fec1 ;
+    var dFechaMayor =  fec2 ;
+  
+    if(comparaFecha( "1",dFechaMenor,dFechaMayor) == true)  
+      return  true//alert("OK. La fecha es menor.");  
+    else  
+      return  false// alert("Error. La fecha NO es menor.");  
+}
+
+function invFecha(nTipFormat,dFecIni){  
+
+	//console.log("\ n TipFormat "+nTipFormat);
+	//console.log("\ n dFecIni "+dFecIni);
+    var dFecIni = dFecIni.replace(/-/g,"/");                    // reemplaza el - por /   
+      
+    //primera division fecha  
+    var nPosUno  = ponCero(dFecIni.substr(0,dFecIni.indexOf("/")));  
+    // 2º divicion fecha  
+    var nPosDos  = ponCero(dFecIni.substr(parseInt(dFecIni.indexOf("/")) + 1,parseInt(dFecIni.lastIndexOf("/")) - parseInt(dFecIni.indexOf("/")) - 1));  
+    // 3º divicion fecha  
+    var nPosTres = ponCero(dFecIni.substr(parseInt(dFecIni.lastIndexOf("/")) + 1));  
+  
+    switch(nTipFormat){  
+        case 1 :    //  DD/MM/YYYY  
+            return dReturnFecha = nPosTres + "" + nPosDos + "" + nPosUno;  
+			//alert("dReturnFecha 1 "+dReturnFecha);
+            break;  
+  
+        case 2 :    //  MM/DD/YYYY  
+           return dReturnFecha = nPosTres + "" + nPosUno + "" +nPosDos;  
+			//alert("dReturnFecha 2 "+dReturnFecha);
+            break;  
+  
+        case 3 :    //  YYYY/MM/DD  
+           return dReturnFecha = nPosUno + "" + nPosDos + "" +nPosTres;  
+			//alert("dReturnFecha 3 "+dReturnFecha);
+            break;  
+      
+        case 4 :    //  YYYY/DD/MM  
+            return dReturnFecha = nPosUno + "" + nPosTres + "" +nPosDos;  
+			//alert("dReturnFecha 4 "+dReturnFecha);
+            break;  
+    }  
+      
+    //return dReturnFecha;    // retorna la fecha       
+}
+
+function comparaFecha(dFormat,dFecMenor, dFecMayor){  
+    dFecMenor = invFecha(dFormat,dFecMenor);  
+    dFecMayor = invFecha(dFormat,dFecMayor);  
+  
+    if(dFecMenor > dFecMayor)  
+        return false;  
+    else  
+        return true;  
+}
+
+
+
+
+
 	function calc_scre()
      {
 		var peso	= document.getElementById('peso').value;
@@ -145,17 +213,7 @@ include 'head.php';
 		var c_cort_prenatal_com_1c = document.getElementById('radio26_cort_com_1').checked;
 		var c_cort_prenatal_com_mc = document.getElementById('radio26_cort_com_2').checked;
 		var valor_reset     =   0;
-		//var cort_mal_for =      null;
-		//var usu_corticoides =      null;
-		/*
-		alert (
-				"\n valor de c_cort_prenatal_SI ->  "+c_cort_prenatal_SI
-			+	"\n valor de c_cort_prenatal_incom ->  "+c_cort_prenatal_incom
-			+	"\n valor de c_cort_prenatal_com_1c ->  "+c_cort_prenatal_com_1c 
-				
-		
-				); 		
-				*/
+ 
 			if (c_cort_prenatal_NO)
 				{                	
                 	usu_corticoides = 1;
@@ -180,12 +238,7 @@ include 'head.php';
 			var  c_malf_NO = document.getElementById('malformacion_no').checked;
 			var  c_malf_cv_SI = document.getElementById('compromete_si').checked;    
 			var  c_malf_cv_NO = document.getElementById('compromete_no').checked;
-			/*	
-			alert("  c_malf_SI " + c_malf_SI
-				 + "\n c_malf_NO " +c_malf_NO			
-				 + "\n c_malf_cv_SI " +c_malf_cv_SI			 		
-				 + "\n c_malf_cv_NO " +c_malf_cv_NO			 		
-				);*/
+ 
 				
 		if (c_malf_SI && c_malf_cv_SI){
  			cort_mal_for = 1;
@@ -193,45 +246,30 @@ include 'head.php';
  		else if ((c_malf_SI && c_malf_cv_NO)||c_malf_NO){
  			cort_mal_for = 0;
  		}
-         // alert("\n cort_mal_for-> "+cort_mal_for);      
-				//alert(sexo);
+ 
 		
 if (peso==0 || peso==null || apgar_1==null || edad==null  || edad==0 || cort_mal_for=='-1' || sexo==null || usu_corticoides==null || cort_mal_for==null)               
  {document.getElementById('score').value='';
-                    return}
-				
-              //  if(peso		==null 	|| 	peso	==''){peso=0;}
-              //  if(edad		==null 	|| 	edad	==''){edad=0;}
-               // if(apgar_1	==null 	|| 	apgar_1	==''){apgar_1=0;}
-               // if(sexo		==null 	||	sexo	==''){sexo=0;}
+                    return} 
 
                 if (sexo=='1'){sexo=0; calculo=1;}
                 if (sexo=='2'){sexo=1; calculo=1;} //else{sexo=0;}
 				if (sexo=='3'){sexo=0; calculo=1;}
-              /*  if(document.getElementById('radio111').checked==true && document.getElementById('malf_congenita').checked==true)
-                {if (document.getElementById('malf_congenita').checked==true){cort_mal_for=1;}else{cort_mal_for=0;}} */
-				
+ 
                 var Peso 			= peso ;			//MiForm.Peso.value;
                 var EG 				= edad;				//MiForm.EG.value;
                 var Apgar 			= apgar_1;			//MiForm.Apgar.value
                 var MC 				= cort_mal_for;		//MiForm.MC.value
                 var Esteroides 			= usu_corticoides;	//MiForm.Esteroides.value
                 var Mujer 			= sexo;				//MiForm.Mujer.value
-				
-				//alert ('peso:'+ Peso + 'edad:'+ EG + 'Apgar1:' + Apgar + 'MC:'+ MC + 'est:' + Esteroides + 'sexo:'+ Mujer);
-				//alert("\n Esteroides"+ Esteroides);
+ 
                 if (Esteroides==null || valor_reset=='3')
                 {document.getElementById('score').value='';
                     return}
 	
 				 // privado
                 var x  				= Math.exp(8.378-((0.331*Peso)/100)-(0.132*EG)-(0.265*Apgar)+(3.419*MC)-(0.302*Esteroides)-(0.474*Mujer));
-                // publico
-                //var x  				= Math.exp(8.378-0.331*Peso/100-0.132*EG-0.265*Apgar+3.419*MC+3.419*MC-0.302*Esteroides-0.474*Mujer);
-			  // var p  = (8.378-0.331*Peso/100-0.132*EG-0.265*Apgar+3.419*MC -0.302*Esteroides-0.474*Mujer);
-               //alert ( p ); 
-			   //var x  			= Math.exp(8.378-0.331*Peso/100-0.132*EG-0.265*Apgar+3.419*MC+3.419*MC-0.302*Esteroides-0.474*Mujer);
-			   
+ 
                 var tot				= ( 1000 * x / ( 1 + x ) ) / 1000;
                 
                 
@@ -242,7 +280,102 @@ if (peso==0 || peso==null || apgar_1==null || edad==null  || edad==0 || cort_mal
 					document.getElementById('score').value=	total;
 	}
 
+function calc_alta() { 
+               	   var fechaInicio = document.getElementById("fecha_nacimiento").value;
+       			   var fechaFin = document.getElementById("fecha_alta").value;
+   				//console.log("\n fechaInicio "+fechaInicio);	   
+   				//console.log("\n fechaFin "+fechaFin);	   
+               
+				if (!(validaFecha('formulario',fechaInicio,fechaFin)))
+                {alert("Fecha alta o fallece no puede ser menor a la fecha de nacimiento");	
+                    document.getElementById('fecha_fin').value='';
+                    return} 
+					 
+                //Obtiene dia, mes y año  
+				var array_fecha1 = fechaInicio.split("-")  //esta linea esta bien y te genera el arreglo
+				var ano1 = parseInt(array_fecha1[0]); // porque repites el nombre dos veces con una basta
+				var mes1 = parseInt(array_fecha1[1]); 
+				var dia1  = parseInt(array_fecha1[2]); 
+				var array_fecha2 = fechaFin.split("-")  //esta linea esta bien y te genera el arreglo
+				var ano2 = parseInt(array_fecha2[0]); // porque repites el nombre dos veces con una basta
+				var mes2 = parseInt(array_fecha2[1]); 
+				var dia2 = parseInt(array_fecha2[2]); 
+                //var fecha1 = new fecha(fechaInicio);   
+                //var fecha2 = new fecha(fechaFin);  
+                //Obtiene objetos Date  
+				//Set the two dates
+				//console.log(" \n  año 1 -> "+ano1+mes1+dia1);
+				//console.log(" \n  año 2 -> "+ano2+mes2+dia2);
+				var fechaIn = new Date(ano1,mes1, dia1);  //Month is 0-11 in JavaScript
+				var fechaFec= new Date(ano2, mes2, dia2);
+				//console.log("\n \n fechaIn -> "+fechaIn.getYear());
+				//console.log("\n \n fechaFec -> "+fechaFec.getYear());
+				//Get 1 day in milliseconds
+				var one_day=1000*60*60*24
+			//Calculate difference btw the two dates, and convert to days
+			var dias2 = (Math.ceil((fechaFec.getTime()-fechaIn.getTime())/(one_day)));
+			
+			if ((mes2==02 ) && (mes1 < mes2)){
+			 if (ano2 % 4 == 0){
+				dias2 = dias2 + 2;
+				} else{
+				dias2 = dias2 + 3;
+				}
+			}
+			if ((mes2==02 ) && (ano1 < ano2)){
+				if (ano2 % 4 == 0){
+			 		if (dia2 > 10){
+					dias2 = dias2 + 1;
+					}else{
+					dias2 = dias2 + 2;
+					}
+					} else{
+				if (dia2 > 11){
+					dias2 = dias2 + 2;
+					}else{
+					dias2 = dias2 + 3;
+					}
+				}			
+			}
 
+			if ((mes2==04) && (mes1 < mes2)){
+			dias2 = dias2 + 1;
+			}
+			if ((mes2==06) && (mes1 < mes2)){
+			dias2 = dias2 + 1;
+			}
+			if ((mes2==09) && (mes1 < mes2)){
+			dias2 = dias2 + 1;
+			}
+			if ((mes2==11) && (mes1 < mes2)){
+			dias2 = dias2 + 1;
+			}
+			if ((mes1==11) && (mes1 < mes2)){
+			dias2 = dias2 - 1;
+			}
+			if ((mes1==04) && (mes1 < mes2)){
+			dias2 = dias2 - 1;
+			}
+			if ((mes1==06) && (mes1 < mes2) ){
+			dias2 = dias2 - 1;
+			}
+			if ((mes1==09) && (mes1 < mes2) ){
+			dias2 = dias2 - 1;
+			}
+			if ((mes1==02) && (mes1 < mes2) ){
+				if (ano2 % 4 == 0){
+				dias2 = dias2 - 2;
+				} else{
+				dias2 = dias2 - 3;
+				}
+			}
+			if ((mes2==03 || mes2==05 || mes2==07 || mes2==08 || mes2==10 || mes2==12 ) && (ano1 < ano2) ){
+			dias2 = dias2 - 1;
+			}
+			console.log("\n \n dias -> "+dias2);
+			console.log("\n \n alta_dias -> "+document.getElementById('alta_dias'));
+			document.getElementById('alta_dias_alta').value=dias2;
+		}
 </script>
 <div class="container">
   <!-- Inicio del Contenido -->

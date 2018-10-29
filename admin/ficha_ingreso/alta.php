@@ -43,7 +43,7 @@ $observaciones_causa_probable_muerte = $ar['OBSERVACIONES_CAUSA_PROBABLE_MUERTE'
 			    	<div class="form-group col-lg-6">
 						<label for="fecha_alta" class="col-lg-6 control-label">Fecha alta o fallece</label>
 						<div class="col-lg-6">
-							<input type="date" name="fecha_alta" value="<?php echo $fecha_alta;  ?>" id="fecha_alta" class="form-control input-sm">
+							<input type="date" name="fecha_alta" value="<?php echo $fecha_alta;  ?>" id="fecha_alta" class="form-control input-sm" onChange="calc_alta();">
 						</div>
 					</div>
 
@@ -221,6 +221,7 @@ $observaciones_causa_probable_muerte = $ar['OBSERVACIONES_CAUSA_PROBABLE_MUERTE'
 	   		<div class=" col-lg-offset-10 col-lg-2">
                         <input type="hidden" name="idOculto" id="idOculto" value="<?php echo $id; ?>"/>
 				<input type="hidden" name="csrf" value="<?php echo  $_SESSION['csrf'];; ?>" /> 
+				<input type="hidden" name="alta_dias_alta" id="alta_dias_alta"   /> 
 	          	<button type="submit" class="btn btn-success" <?php ocultarBoton($estado,$perfil);?>>Guardar</button>
 	        </div> 
 
