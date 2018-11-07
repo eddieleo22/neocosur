@@ -121,6 +121,7 @@ $evo->LECHE_MAT_HOSP_36_SEM=$cone->test_input($materna_36_sem);
 $evo->OBSERVACION_EVAL_TRATAMIENTO =$cone->test_input($observaciones_alimentacion);
 //$cone= new ConexionDAO();
 $dao = new evolucion_tratamientoDAO($cone);
+
  
 
 
@@ -151,17 +152,18 @@ $existe =  $dao->buscarId($idOculto);
 				
 			}
 			*/
+			
 			$dao->guarda($evo);
 			echo '<script type="text/javascript">
 					window.location.assign("../ficha_ingreso.php?id_neocosur='.$idOculto.'&url=evolucion#evolucion");
 					</script>';
 		}
 		else {
-			 
+			
 			$dias=$detalle_cirugia_dias;
 			$detalle=$detalle_cirugia;
 			$otro=$detalle_cirugia_otro;
-
+	
 			$daoCirugia=new cirugiaDAO($cone);
 			for($i=1;$i< count($dias);$i++) {
 				$cirugia= new cirugia();

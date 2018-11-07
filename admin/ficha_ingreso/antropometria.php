@@ -105,7 +105,7 @@ $TALLA_ALTA_DIAS = $p['TALLA_ALTA_DIAS'];
 		    				<td>
 		    					<label for="alta_antropometria" class="control-label radio-inline col-lg-2" >Alta</label>
 		    					<div class="input-group linea col-lg-5">
-                                                            <input type="number" min="1" max="999" step="0.1" name="alta_dias" value="<?php echo $EDAD_ALTA_DIAS ?>" class="form-control input-sm" aria-describedby="basic-addon2">
+                                                            <input type="number" min="1" max="999" step="1" name="alta_dias" id="alta_dias" value="<?php echo $EDAD_ALTA_DIAS ?>" class="form-control input-sm" aria-describedby="basic-addon2" readonly>
 		            				<span class="input-group-addon" id="basic-addon2">días</span>
 		          				</div>
 		    				</td>

@@ -202,7 +202,7 @@ $observaciones_alimentacion=$ar['OBSERVACION_EVAL_TRATAMIENTO'];
             				<span class="input-group-addon" id="basic-addon2">hrs.</span>
           				</div>
           				<div class="col-lg-3 input-group linea">
-            				<input type="number" min="0" max="100" step="1" name="duracion_oxigeno_dias" value="<?php echo $duracion_oxigeno_dias;?>" class="form-control input-sm detalle_duracion_oxigeno" aria-describedby="basic-addon2">
+            				<input type="number" min="0" max="200" step="1" name="duracion_oxigeno_dias" value="<?php echo $duracion_oxigeno_dias;?>" class="form-control input-sm detalle_duracion_oxigeno" aria-describedby="basic-addon2">
             				<span class="input-group-addon" id="basic-addon2">días</span>
           				</div>
         			</div>
@@ -842,14 +842,14 @@ $observaciones_alimentacion=$ar['OBSERVACION_EVAL_TRATAMIENTO'];
 				        			<td class="col-lg-3">A los 7 días</td>
 				        			<td class="col-lg-3">
 				        				<div class="input-group linea">
-				            				<input type="number" min="0" max="100" value="<?php echo $formula_7_dias; ?>" step="1" name="formula_7_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
+				            				<input type="number" min="0"  step="0.1" value="<?php echo $formula_7_dias; ?>" step="1" name="formula_7_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
 				            				<span class="input-group-addon" id="basic-addon2">ml/kg/día</span>
 				            			</div>
 				        			</td>
 				        			<td class="col-lg-3">A los 7 días</td>
 				        			<td class="col-lg-3">
 				        				<div class="input-group linea">
-				            				<input type="number" min="0" max="100" step="1"  value="<?php echo $materna_7_dias; ?>" name="materna_7_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
+				            				<input type="number" min="0" step="0.1"  value="<?php echo $materna_7_dias; ?>" name="materna_7_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
 				            				<span class="input-group-addon" id="basic-addon2">ml/kg/día</span>
 				            			</div>
 				        			</td>
@@ -859,14 +859,14 @@ $observaciones_alimentacion=$ar['OBSERVACION_EVAL_TRATAMIENTO'];
 				        			<td class="col-lg-3">A los 14 días</td>
 				        			<td class="col-lg-3">
 				        				<div class="input-group linea">
-				            				<input type="number" min="0" max="100" step="1" value="<?php echo $formula_14_dias; ?>" name="formula_14_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
+				            				<input type="number" min="0" step="0.1" value="<?php echo $formula_14_dias; ?>" name="formula_14_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
 				            				<span class="input-group-addon" id="basic-addon2">ml/kg/día</span>
 				            			</div>
 				        			</td>
 				        			<td class="col-lg-3">A los 14 días</td>
 				        			<td class="col-lg-3">
 				        				<div class=" input-group linea">
-				            				<input type="number" min="0" max="100" step="1" value="<?php echo $materna_14_dias; ?>" name="materna_14_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
+				            				<input type="number" min="0" step="0.1" value="<?php echo $materna_14_dias; ?>" name="materna_14_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
 				            				<span class="input-group-addon" id="basic-addon2">ml/kg/día</span>
 				            			</div>
 				        			</td>
@@ -876,14 +876,14 @@ $observaciones_alimentacion=$ar['OBSERVACION_EVAL_TRATAMIENTO'];
 				        			<td class="col-lg-3">A los 28 días</td>
 				        			<td class="col-lg-3">
 				        				<div class=" input-group linea">
-				            				<input type="number" min="0" max="100" step="1" value="<?php echo $formula_28_dias; ?>" name="formula_28_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
+				            				<input type="number" min="0" step="0.1" value="<?php echo $formula_28_dias; ?>" name="formula_28_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
 				            				<span class="input-group-addon" id="basic-addon2">ml/kg/día</span>
 				            			</div>
 				        			</td>
 				        			<td class="col-lg-3">A los 28 días</td>
 				        			<td class="col-lg-3">
 				        				<div class="input-group linea">
-				            				<input type="number" min="0" max="100" step="1" value="<?php echo $materna_28_dias; ?>" name="materna_28_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
+				            				<input type="number" min="0" step="0.1" value="<?php echo $materna_28_dias; ?>" name="materna_28_dias" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
 				            				<span class="input-group-addon" id="basic-addon2">ml/kg/día</span>
 				            			</div>
 				        			</td>
@@ -893,14 +893,14 @@ $observaciones_alimentacion=$ar['OBSERVACION_EVAL_TRATAMIENTO'];
 				        			<td class="col-lg-3">A las 36 semanas o alta</td>
 				        			<td class="col-lg-3">
 				        				<div class="input-group linea">
-				            				<input type="number" min="0" max="100" step="1" value="<?php echo $formula_36_sem; ?>" name="formula_36_sem" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
+				            				<input type="number" min="0" step="0.1" value="<?php echo $formula_36_sem; ?>" name="formula_36_sem" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
 				            				<span class="input-group-addon" id="basic-addon2">ml/kg/día</span>
 				            			</div>
 				        			</td>
 				        			<td class="col-lg-3">A las 36 semanas o alta</td>
 				        			<td class="col-lg-3">
 				        				<div class="input-group linea">
-				            				<input type="number" min="0" max="100" step="1" value="<?php echo $materna_36_sem; ?>" name="materna_36_sem" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
+				            				<input type="number" min="0" step="0.1" value="<?php echo $materna_36_sem; ?>" name="materna_36_sem" class="form-control input-sm detalle_leche" aria-describedby="basic-addon2">
 				            				<span class="input-group-addon" id="basic-addon2">ml/kg/día</span>
 				            			</div>
 				        			</td>

@@ -111,7 +111,21 @@ class antropometriaDAO
 		return $retorno;
 	}
 	
-	
+	public function actualizarAlta($dias,$idNeocosur)
+	{	
+		$query = "UPDATE antropometria SET 
+				`EDAD_ALTA_DIAS` =  ?  
+				WHERE `ID_NEOCOSUR`=? ";
+				
+		$this->conexionDao->Abrir();
+		$sentencia = $this->conexionDao->prepare($query);		
+		$sentencia->bind_param("ss",  
+		$dias,$idNeocosur);
+
+		$retorno=$sentencia->execute(); 
+		$this->conexionDao->Cerrar();
+		return $retorno;
+	}
 
 	
 	public function buscarId($id)
