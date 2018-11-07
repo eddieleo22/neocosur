@@ -81,14 +81,14 @@ jQuery(document).ready(function(){
     	if( $input.prop("checked") )
     	{
     		$(".cort_prenatal").show();
-    		if( $("#completo_si").prop( "checked" ) ){
+    		if( $("#completo_si").prop( "checked" ) ){ 
     			$(".completo").show();
     		}
     	}});
 	$( "#cort_prenatal_no" ).change(function() {
     	var $input = $( this );
     	if( $input.prop("checked") )
-    	{
+    	{ 	
     		$(".cort_prenatal").hide();
     		$("#completo_si, #completo_no").removeProp("checked");
             $("input[name*='curso']").removeProp("checked");
@@ -97,14 +97,14 @@ jQuery(document).ready(function(){
 	$( "#cort_prenatal_s_i" ).change(function() {
     	var $input = $( this );
     	if( $input.prop("checked") )
-    	{
+    	{ 
     		$(".cort_prenatal").hide();
     		$("#completo_si, #completo_no").removeProp("checked");
             $("input[name*='curso']").removeProp("checked");
     		$(".completo").hide();
     	}});
 
-	$( "#completo_no" ).change(function() {
+	$( "#completo_si" ).change(function() {
     	var $input = $( this );
     	if( $input.prop("checked") )
     	{
@@ -112,7 +112,7 @@ jQuery(document).ready(function(){
     		$("input[name*='curso']").removeProp("checked");
 
     	}});
-	$( "#completo_si" ).change(function() {
+	$( "#completo_no" ).change(function() { 
     	var $input = $( this );
     	if( $input.prop("checked") )
     	{

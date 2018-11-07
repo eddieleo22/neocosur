@@ -636,7 +636,7 @@ $arC=$daoSepsis->buscarId($id);
               <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-html="true" aria-hidden="true" title="Cuadro clínico de spesis, pero con cultivo negativo y tratado por más de 5 días o menos si fallece."></span>
             </label>
             <div class="col-lg-3">
-                <input type="number" min="1" max="99" step="1" name="num_sepsis" value="<?php echo $num_sepsis; ?>" class="form-control input-sm">
+                <input type="number" min="0" max="99" step="1" name="num_sepsis" value="<?php echo $num_sepsis; ?>" class="form-control input-sm">
             </div>
           </div>  
         </div>

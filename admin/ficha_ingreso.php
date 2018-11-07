@@ -381,7 +381,7 @@ if (peso==0 || peso==null || apgar_1==null || edad==null  || edad==0 || cort_mal
     };
   };
 
-  if( $( "#completo_no" ).prop("checked") )
+  if( $( "#completo_si" ).prop("checked") )
   {
     $(".completo").show();
   };
