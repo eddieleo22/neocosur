@@ -373,8 +373,10 @@ function calc_alta() {
 			dias2 = dias2 - 1;
 			}
 			console.log("\n \n dias -> "+dias2);
-			console.log("\n \n alta_dias -> "+document.getElementById('alta_dias'));
+			console.log("\n \n alta_dias -> "+document.getElementById('alta_dias').value);			
 			document.getElementById('alta_dias_alta').value=dias2;
+			console.log("\n \n alta_dias_alta -> "+document.getElementById('alta_dias_alta').value);
+			document.getElementById('alta_dias').value=dias2;
 		}
 </script>
 <div class="container">

@@ -352,7 +352,7 @@ $test = obtener_lista_anios(1); //los años a adelantar lo cambias logicamente.
 		function tabla2(etiqTabla, datosTabla) {
 			
 		var mybody = document.getElementsByTagName("body")[0];
-		var tableHeder = ["P", "%P", "NP","%NP","Total reg.", "S/I", "%S/I", "Total Ninios"];
+		var tableHeder = ["P", "%P", "NP","%NP","Total reg.", "S/I", "%S/I", "Total Niños"];
 		div = document.getElementById("dos");
         mytable     = document.createElement("table");
         mytablebody = document.createElement("tbody");
@@ -420,7 +420,7 @@ $test = obtener_lista_anios(1); //los años a adelantar lo cambias logicamente.
 		function tabla1(etiqTabla, datosTabla) {
 		var c = 0;
 		var mybody = document.getElementsByTagName("body")[0];
-		var tableHeder = ["P", "%P", "NP","%NP","Total reg.", "S/I", "%S/I", "Total Ninios"];
+		var tableHeder = ["P", "%P", "NP","%NP","Total reg.", "S/I", "%S/I", "Total Niños"];
 		div = document.getElementById("uno");
         mytable     = document.createElement("table");
         mytablebody = document.createElement("tbody");
