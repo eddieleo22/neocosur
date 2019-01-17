@@ -402,9 +402,11 @@ else {
 
 
 $query=substr($query,0, -1);
-$query .= "  ,c_id_centro
-		
-	
+$query .= "  ,c_id_centro,		
+	case  
+		when nombre_control !='null' then nombre_control
+		else 'control optativo'
+		end 'Nombre Control'
 	FROM  control cont 
 		inner join ingreso i on cont.ID_NEOCOSUR  =  i.ID_NEOCOSUR 
 		inner join centro c on c.c_id_centro = i.id_centro 

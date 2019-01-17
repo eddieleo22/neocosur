@@ -111,7 +111,7 @@ $TALLA_ALTA_DIAS = $p['TALLA_ALTA_DIAS'];
 		    				</td>
 		    				<td>
 		    					<div class="input-group linea col-lg-6">
-                                     <input type="number" min="500" step="0.1" name="alta_peso" value="<?php echo $PESO_ALTA_DIAS ?>" class="form-control input-sm" aria-describedby="basic-addon2">
+                                     <input type="number" min="400" step="0.1" name="alta_peso" value="<?php echo $PESO_ALTA_DIAS ?>" class="form-control input-sm" aria-describedby="basic-addon2">
 		            				<span class="input-group-addon" id="basic-addon2">g.</span>
 		          				</div>
 		    				</td>
