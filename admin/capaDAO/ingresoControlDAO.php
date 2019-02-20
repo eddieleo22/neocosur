@@ -99,7 +99,7 @@ class ingresoControlDAO  {
 	}		
 	
 	public function listarControles($activo,$idNeocosur ){
-		$query ="select EDAD_CORREGIDA_AGNOS,EDAD_CORREGIDA_MESES , nombre_control,ID_CONTROL,FECHA_INGRESO_PROGRAMA
+		 $query ="select EDAD_CORREGIDA_AGNOS,EDAD_CORREGIDA_MESES , nombre_control,ID_CONTROL,FECHA_INGRESO_PROGRAMA
 				from  control  ct
 				inner join ingreso i   on  ct.ID_NEOCOSUR=i.ID_NEOCOSUR and i.ID_NEOCOSUR =? 
 
@@ -111,7 +111,7 @@ class ingresoControlDAO  {
 		$this->conexionDao->Abrir();
 		
 		$sentencia = $this->conexionDao->prepare($query);
-		$sentencia->bind_param("ii", $activo,$idNeocosur );		
+		$sentencia->bind_param("ii",$idNeocosur, $activo );		
 		$sentencia->execute();
 		$resultado = $sentencia->get_result();
 

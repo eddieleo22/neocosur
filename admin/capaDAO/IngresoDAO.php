@@ -152,8 +152,9 @@ class IngresoDAO  {
       
 	public function  buscarFichaId($id)
 	{
+		
 		//$query = "select  *  from ingreso WHERE ID_NEOCOSUR=".$id;
-		$query = "SELECT * FROM ingreso WHERE ID_NEOCOSUR = ?";
+		 $query = "SELECT * FROM ingreso WHERE ID_NEOCOSUR = ?";
 		
 		
 		$this->conexionDao->Abrir();
@@ -167,6 +168,7 @@ class IngresoDAO  {
 		$res=$sentencia->execute();
 		$resultado = $sentencia->get_result();
 		$row = $resultado->fetch_assoc();
+		//var_dump($row);
 		//$retorno = $this->conexionDao->select($query);						
 		//$row = $retorno->fetch_assoc();
 		$this->conexionDao->Cerrar();

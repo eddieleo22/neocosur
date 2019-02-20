@@ -366,7 +366,7 @@ if(nuevoIdControl >0){
 
 	
 	location.href="control.php?idNeocosur="+idNeo+"&idControl="+nuevoIdControl+"&message="+nuevoMensaje+"";;
-		console.log("\n\n\n\n paso ??  ");
+		
 }
 else {
 	var hoy = new Date();
@@ -526,9 +526,9 @@ function clickPrincipal(){
 	//alert("paso ");
 }
 window.onload = function() { 
-if($('#fecha_control').val()!=''){
-		cal_fecha($('#txt_fec_crono').val(), 'anio','meses',$('#fecha_control').val(),'DATOS_CONTROL');			
-        cal_fecha($('#txt_fec_nacimiento').val(), 'anio2','meses2',$('#fecha_control').val(),'DATOS_CONTROL');
+if($('#fechita_control').val()!=''){
+		cal_fecha($('#txt_fec_crono').val(), 'anio','meses',$('#fechita_control').val(),'DATOS_CONTROL');			
+        cal_fecha($('#txt_fec_nacimiento').val(), 'anio2','meses2',$('#fechita_control').val(),'DATOS_CONTROL');
 	}
 //$('#ingreso_control').val($('#fecha_control').val());
 //$('#ingreso_control').prop('readonly', true);

@@ -284,16 +284,20 @@ function listarControlesActivos($row,$idABuscar){
 
 function listarControlesInactivos($row,$idABuscar){
 	$contador=0;
+	//echo "<br><br> prueba fuck <br><br>";
+	//var_dump($row->fetch_array());
 	while($arr = $row->fetch_array())
 		 {
 			 $contador ++;
 			//$row[]=$arr;
+			console.log("id a buscar "+$idABuscar);
+			console.log("ID_CONTROL "+$arr[$ID_CONTROL]);
 			if($idABuscar==$arr[$ID_CONTROL]){
 				$selected=" selected=selected";
 				echo utf8_encode("<option value ='".$arr['ID_CONTROL']."' {$selected} >  Control  ".$contador." </option>");
 			}
 			else{
-				
+				console.log("ID_CONTROL "+$arr[$ID_CONTROL]);
 				echo utf8_encode("<option value ='".$arr['ID_CONTROL']."' > Control  ".$contador."</option>");
 			}
 		//echo "<option value ='{$arr[$value]}' {$selected} >{$arr[$descrip]}</option>";

@@ -11,22 +11,23 @@ if($_SESSION['token']==''){
 	salir($_SESSION["token"]);
 }
 
-include '../admin/capaEntidades/class.inputfilter.php';
+/*include '../admin/capaEntidades/class.inputfilter.php';
 $filtro = new InputFilter();
 $_POST = $filtro->process($_POST);
 $_GET = $filtro->process($_GET);
 
-
+*/
 $cone = new ConexionDAO();
 $dao = new graficoCurvasDAO($cone);
 $daoI =  new IngresoDAO($cone);
 
-        $idControl = $cone->test_input($_GET['idControl']);
-        $idControl =  $filtro->process($idControl);
-        $idNeocosur = $cone->test_input($_GET['idNeocosur']);
-        $idNeocosur = $filtro->process($idNeocosur);
-		$centro = $cone->test_input($_GET['idCentro']);  
-		$centro = $filtro->process($centro);
+        $idControl = $_GET['idControl'];
+        //$idControl =  $filtro->process($idControl);
+        $idNeocosur = $_GET['idNeocosur'];
+        //$idNeocosur = $filtro->process($idNeocosur);
+		$centro = $_GET['idCentro'];  
+		//$centro = $filtro->process($centro);
+		
 $fila = $daoI->buscarFichaId($idNeocosur);
 
 $nombres =$fila['NOMBRES'];
